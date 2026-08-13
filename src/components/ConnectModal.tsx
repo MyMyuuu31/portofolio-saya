@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Mail, Send, Check, Copy, ExternalLink, MessageSquare, Phone } from 'lucide-react';
+import { X, Mail, Send, Check, Copy, Phone } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface ConnectModalProps {
@@ -116,7 +116,7 @@ export const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) =
 
         {/* Quick Contacts */}
         <div className="mt-6 pt-5 border-t border-gray-100 space-y-3">
-          <p className="text-xs font-medium text-[#737688]">Kontak Langsung & Sosial Media</p>
+          <p className="text-xs font-medium text-[#737688]">Kontak Langsung</p>
           <div className="flex flex-wrap items-center gap-2 text-xs">
             <button
               onClick={copyEmail}
@@ -134,26 +134,6 @@ export const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) =
             >
               <Phone size={14} />
               <span>WhatsApp</span>
-            </a>
-
-            <a
-              href={PERSONAL_INFO.contact.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-pink-50 text-pink-600 border border-pink-200 hover:bg-pink-100 transition-colors"
-            >
-              <ExternalLink size={14} />
-              <span>Instagram</span>
-            </a>
-
-            <a
-              href={PERSONAL_INFO.contact.tiktok}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-900 text-white hover:bg-black transition-colors"
-            >
-              <MessageSquare size={14} />
-              <span>TikTok</span>
             </a>
           </div>
         </div>

@@ -9,6 +9,7 @@ import { Hobbies } from './components/Hobbies';
 import { ConnectModal } from './components/ConnectModal';
 import { ProjectGalleryModal } from './components/ProjectGalleryModal';
 import { YudiAIBot } from './components/YudiAIBot';
+import { SocialConnect } from './components/SocialConnect';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -72,6 +73,9 @@ export default function App() {
 
         {/* Hobbies Section */}
         <Hobbies />
+
+        {/* Social Connect Section */}
+        <SocialConnect />
       </main>
 
       {/* Footer */}

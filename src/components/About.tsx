@@ -16,8 +16,8 @@ export const About: React.FC = () => {
             {/* Frame foto */}
             <div className="relative bg-white p-3 rounded-3xl border-2 border-[#e5e7eb] shadow-lg z-10">
               <img
-                src={PERSONAL_INFO.profilePhoto}
-                alt="Foto Profil M. Yudi Prianto"
+                src={PERSONAL_INFO.aboutPhoto}
+                alt="Foto About M. Yudi Prianto"
                 className="w-full h-[400px] object-cover object-top rounded-2xl"
                 loading="lazy"
               />
