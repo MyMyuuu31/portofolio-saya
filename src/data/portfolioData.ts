@@ -63,40 +63,42 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     id: 'esco-1',
     role: 'Praktik Kerja Lapangan (PKL)',
-    company: 'PT Esco Indonesia — Departemen Small WO',
+    company: 'PT ESCO INDONESIA',
+    department: 'Departemen Small WO',
     period: '2024',
-    description: 'Menjalani program PKL sebagai siswa SMK di departemen Small WO, yaitu departemen yang menangani pengemasan (packing) komponen dan alat-alat kecil dari PT Esco Indonesia. Meskipun berbeda dari jurusan RPL, pengalaman ini memberikan banyak pelajaran berharga tentang dunia kerja nyata.',
+    description: 'Menjalani program PKL sebagai siswa SMK Jurusan Rekayasa Perangkat Lunak di PT Esco Indonesia, sebuah perusahaan manufaktur peralatan laboratorium dan biomedis bertaraf internasional yang berlokasi di Batam. Ditempatkan di Departemen Small WO yang menangani pengemasan (packing) komponen dan alat-alat kecil. Meskipun berbeda dari jurusan RPL, pengalaman ini memberikan banyak pelajaran berharga tentang dunia kerja nyata, kedisiplinan industri, dan cara membangun relasi profesional.',
     tags: [
       'Packing & Inventory',
       'Microsoft Excel',
       'Microsoft Word',
-      'Pendataan Barang',
-      'Dunia Kerja',
-      'Membangun Relasi'
+      'Pendataan Stok Barang',
+      'Kedisiplinan Industri',
+      'Membangun Relasi',
+      'Dunia Kerja Nyata'
     ]
   }
 ];
 
 export const ACHIEVEMENTS: AchievementItem[] = [
   {
-    id: 'ranking-sd',
-    title: 'Ranking 1–3 Sejak SD',
-    year: 'SD – SMP',
-    description: 'Secara konsisten meraih peringkat 1 hingga 3 di kelas sejak kelas 1 SD hingga SMP. Konsistensi ini mencerminkan dedikasi dan disiplin belajar yang kuat sejak dini.',
+    id: 'ranking-konsisten',
+    title: 'Ranking Konsisten SD s.d. SMK',
+    year: 'Kelas 1 SD – Kelas 11 SMK',
+    description: 'Meraih peringkat 1–3 secara konsisten dari kelas 1 SD hingga kelas 9 SMP. Di SMK: Ranking 1 (Kelas 10 Sem 1), Ranking 3 (Kelas 10 Sem 2), Ranking 1 (Kelas 11 Sem 1), Ranking 7 (Kelas 11 Sem 2).',
     icon: 'Trophy'
   },
   {
-    id: 'juara-smp',
+    id: 'juara-umum-smp',
     title: 'Juara Umum SMP',
-    year: 'SMP',
-    description: 'Meraih juara umum di tingkat SMP, membuktikan konsistensi performa akademik terbaik di seluruh angkatan.',
+    year: 'Kelas 8 Semester 1',
+    description: 'Meraih Juara Umum di SMPN 27 Bintan pada kelas 8 semester 1, membuktikan konsistensi performa akademik terbaik di seluruh angkatan.',
     icon: 'Trophy'
   },
   {
     id: 'olimpiade-mtk',
-    title: 'Olimpiade Matematika Tingkat Kabupaten',
+    title: 'Juara 3 Olimpiade Matematika Tingkat Kecamatan',
     year: 'SD Kelas 5',
-    description: 'Mewakili sekolah dalam olimpiade matematika dan berhasil melaju hingga tingkat kabupaten. Pengalaman ini mempertajam kemampuan berpikir logis dan pemecahan masalah secara sistematis.',
+    description: 'Meraih Juara 3 olimpiade matematika tingkat kecamatan saat kelas 5 SD, kemudian mewakili ke tingkat kabupaten. Pengalaman ini mempertajam kemampuan berpikir logis dan pemecahan masalah.',
     icon: 'Calculator'
   }
 ];

@@ -24,6 +24,7 @@ export const Header: React.FC<HeaderProps> = ({ onConnectClick, activeSection })
     { name: 'About', href: '#about', id: 'about' },
     { name: 'Skills', href: '#skills', id: 'skills' },
     { name: 'Experience', href: '#experience', id: 'experience' },
+    { name: 'Education', href: '#education', id: 'education' },
     { name: 'Achievements', href: '#achievements', id: 'achievements' },
     { name: 'Hobbies', href: '#hobbies', id: 'hobbies' },
   ];

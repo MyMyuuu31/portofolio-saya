@@ -10,6 +10,7 @@ import { ConnectModal } from './components/ConnectModal';
 import { ProjectGalleryModal } from './components/ProjectGalleryModal';
 import { YudiAIBot } from './components/YudiAIBot';
 import { SocialConnect } from './components/SocialConnect';
+import { EducationJourney } from './components/EducationJourney';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -18,7 +19,7 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const sections = ['home', 'about', 'skills', 'experience', 'achievements', 'hobbies'];
+    const sections = ['home', 'about', 'skills', 'experience', 'education', 'achievements', 'hobbies'];
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
@@ -67,6 +68,9 @@ export default function App() {
         <Experience 
           onViewDetails={() => setProjectGalleryOpen(true)}
         />
+
+        {/* Education Journey Section */}
+        <EducationJourney />
 
         {/* Achievements Section */}
         <Achievements />
