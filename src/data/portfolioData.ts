@@ -16,11 +16,11 @@ export const PERSONAL_INFO = {
     'Berfokus pada pengembangan solusi digital yang efisien dan scalable. Memadukan logika pemrograman dengan desain antarmuka yang fungsional.'
   ],
   contact: {
-    email: 'm.yudi.prianto@example.com',
+    email: 'muhammadyudiprianto30@gmail.com',
     github: 'https://github.com',
     linkedin: 'https://linkedin.com',
     instagram: 'https://instagram.com',
-    whatsapp: 'https://wa.me/6281234567890'
+    whatsapp: 'https://wa.me/6282389505052'
   }
 };
 
@@ -29,18 +29,18 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     title: 'Frontend',
     icon: 'Code2',
     skills: [
-      { name: 'HTML/CSS', percentage: 90 },
-      { name: 'JavaScript', percentage: 80 },
-      { name: 'Tailwind CSS', percentage: 85 }
+      { name: 'HTML/CSS', percentage: 30 },
+      { name: 'JavaScript', percentage: 15 },
+      { name: 'Tailwind CSS', percentage: 20 }
     ]
   },
   {
     title: 'Backend',
     icon: 'Database',
     skills: [
-      { name: 'PHP', percentage: 75 },
-      { name: 'Laravel', percentage: 70 },
-      { name: 'MySQL', percentage: 80 }
+      { name: 'PHP', percentage: 15 },
+      { name: 'Laravel', percentage: 10 },
+      { name: 'MySQL', percentage: 20 }
     ]
   },
   {
