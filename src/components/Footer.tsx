@@ -22,12 +22,20 @@ export const Footer: React.FC<FooterProps> = ({ onConnectClick }) => {
         {/* Social Links */}
         <div className="flex items-center space-x-6 text-xs md:text-sm font-medium text-[#434656]">
           <a 
-            href={PERSONAL_INFO.contact.linkedin} 
+            href={PERSONAL_INFO.contact.instagram} 
             target="_blank" 
             rel="noopener noreferrer"
             className="hover:text-[#0052ff] transition-colors"
           >
-            LinkedIn
+            Instagram
+          </a>
+          <a 
+            href={PERSONAL_INFO.contact.tiktok} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-[#0052ff] transition-colors"
+          >
+            TikTok
           </a>
           <a 
             href={PERSONAL_INFO.contact.github} 
@@ -43,14 +51,6 @@ export const Footer: React.FC<FooterProps> = ({ onConnectClick }) => {
           >
             Email
           </button>
-          <a 
-            href={PERSONAL_INFO.contact.instagram} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="hover:text-[#0052ff] transition-colors"
-          >
-            Instagram
-          </a>
         </div>
       </div>
     </footer>

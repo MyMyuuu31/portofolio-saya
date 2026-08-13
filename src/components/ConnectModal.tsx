@@ -116,8 +116,8 @@ export const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) =
 
         {/* Quick Contacts */}
         <div className="mt-6 pt-5 border-t border-gray-100 space-y-3">
-          <p className="text-xs font-medium text-[#737688]">Kontak Langsung & Portofolio</p>
-          <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
+          <p className="text-xs font-medium text-[#737688]">Kontak Langsung & Sosial Media</p>
+          <div className="flex flex-wrap items-center gap-2 text-xs">
             <button
               onClick={copyEmail}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-50 border border-gray-200 text-[#1a1c1c] hover:border-[#0052ff] transition-colors cursor-pointer"
@@ -127,7 +127,7 @@ export const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) =
             </button>
 
             <a
-              href="https://wa.me/6282389505052"
+              href={PERSONAL_INFO.contact.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 transition-colors"
@@ -137,13 +137,23 @@ export const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) =
             </a>
 
             <a
-              href="https://github.com"
+              href={PERSONAL_INFO.contact.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-pink-50 text-pink-600 border border-pink-200 hover:bg-pink-100 transition-colors"
+            >
+              <ExternalLink size={14} />
+              <span>Instagram</span>
+            </a>
+
+            <a
+              href={PERSONAL_INFO.contact.tiktok}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-900 text-white hover:bg-black transition-colors"
             >
-              <ExternalLink size={14} />
-              <span>GitHub</span>
+              <MessageSquare size={14} />
+              <span>TikTok</span>
             </a>
           </div>
         </div>

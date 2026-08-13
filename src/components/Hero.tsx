@@ -22,10 +22,13 @@ export const Hero: React.FC<HeroProps> = ({ onProjectsClick }) => {
           {/* Headline */}
           <h1 
             id="hero-title"
-            className="font-sora text-4xl md:text-6xl font-extrabold text-[#1a1c1c] tracking-tight leading-[1.15] mb-5"
+            className="font-sora text-4xl md:text-6xl font-extrabold text-[#1a1c1c] tracking-tight leading-[1.15] mb-2"
           >
             {PERSONAL_INFO.title}
           </h1>
+          <p className="font-sora text-lg md:text-2xl font-semibold text-[#0052ff] mb-5 tracking-tight">
+            {PERSONAL_INFO.fullName}
+          </p>
 
           {/* Subtitle */}
           <p 

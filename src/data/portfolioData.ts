@@ -2,24 +2,27 @@ import { SkillCategory, ExperienceItem, AchievementItem, HobbyItem, ProjectItem 
 
 export const PERSONAL_INFO = {
   name: 'M. Yudi Prianto',
+  fullName: 'Muhammad Yudi Prianto',
   brand: 'YUDI.DEV',
-  title: 'Halo, Saya Yudi.',
+  title: 'Halo, Saya Yudi! 👋',
   role: 'Software Engineering Student',
   school: 'SMKN 1 Bintan Timur',
-  tagline: 'Software Engineering Student @ SMKN 1 Bintan Timur. Membangun masa depan digital dengan presisi.',
+  tagline: 'Muhammad Yudi Prianto — Software Engineering Student @ SMKN 1 Bintan Timur. Masih belajar, tapi semangat nggak pernah berhenti! 🚀',
+  profilePhoto: '/profile.jpeg',
   birthDate: '2008-03-31',
   birthPlace: 'Pariaman',
   age: 18,
   aboutHeadline: 'Membangun Fondasi.',
   aboutParagraphs: [
-    'Lahir di Pariaman, 31 Maret 2008. Kini berusia 18 tahun dan berdedikasi dalam dunia Rekayasa Perangkat Lunak.',
-    'Berfokus pada pengembangan solusi digital yang efisien dan scalable. Memadukan logika pemrograman dengan desain antarmuka yang fungsional.'
+    'Nama lengkap saya Muhammad Yudi Prianto, lahir di Pariaman, 31 Maret 2008. Kini berusia 18 tahun dan sedang menempuh pendidikan di jurusan Rekayasa Perangkat Lunak (RPL) SMKN 1 Bintan Timur.',
+    'Masih dalam tahap belajar dan terus berkembang. Saya percaya bahwa setiap baris kode yang ditulis adalah satu langkah maju menuju versi terbaik diri sendiri. 💡'
   ],
   contact: {
     email: 'muhammadyudiprianto30@gmail.com',
     github: 'https://github.com',
     linkedin: 'https://linkedin.com',
-    instagram: 'https://instagram.com',
+    instagram: 'https://www.instagram.com/myuu_d1?igsh=eGQ5cWJpODdoN3c5',
+    tiktok: 'https://www.tiktok.com/@itssmymyuuu?_r=1&_t=ZS-98q4RYQ7Gar',
     whatsapp: 'https://wa.me/6282389505052'
   }
 };
