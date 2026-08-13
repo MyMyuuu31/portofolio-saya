@@ -4,19 +4,40 @@ import { ACHIEVEMENTS } from '../data/portfolioData';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const iconMap: Record<string, React.ReactNode> = {
-  Trophy: <Trophy size={20} />,
-  Calculator: <Calculator size={20} />,
+  Trophy: <Trophy size={28} />,
+  Calculator: <Calculator size={28} />,
 };
 
-const colorMap = [
-  { bg: 'bg-amber-50', border: 'border-amber-200', icon: 'bg-amber-100 text-amber-600', badge: 'bg-amber-100 text-amber-700' },
-  { bg: 'bg-blue-50',  border: 'border-blue-200',  icon: 'bg-blue-100 text-blue-600',   badge: 'bg-blue-100 text-blue-700'   },
-  { bg: 'bg-purple-50',border: 'border-purple-200',icon: 'bg-purple-100 text-purple-600',badge: 'bg-purple-100 text-purple-700'},
+const banners = [
+  {
+    bg: 'bg-[#0052ff]',
+    text: 'text-white',
+    sub: 'text-blue-200',
+    badge: 'bg-white/20 text-white',
+    icon: 'bg-white/20 text-white',
+    accent: 'bg-white/5',
+  },
+  {
+    bg: 'bg-[#1a1c1c]',
+    text: 'text-white',
+    sub: 'text-gray-400',
+    badge: 'bg-white/10 text-gray-200',
+    icon: 'bg-white/10 text-white',
+    accent: 'bg-white/5',
+  },
+  {
+    bg: 'bg-[#f0f7ff]',
+    text: 'text-[#1a1c1c]',
+    sub: 'text-[#434656]',
+    badge: 'bg-[#0052ff]/10 text-[#0052ff]',
+    icon: 'bg-[#0052ff]/10 text-[#0052ff]',
+    accent: 'bg-[#0052ff]/5',
+  },
 ];
 
 export const Achievements: React.FC = () => {
   const header = useScrollAnimation();
-  const list   = useScrollAnimation(0.05);
+  const list = useScrollAnimation(0.05);
 
   return (
     <section id="achievements" className="py-20 md:py-28 px-6 md:px-12 max-w-6xl mx-auto">
@@ -32,37 +53,44 @@ export const Achievements: React.FC = () => {
         </p>
       </div>
 
-      {/* Cards */}
-      <div ref={list.ref} className="space-y-5">
+      {/* Banner List */}
+      <div ref={list.ref} className="space-y-4">
         {ACHIEVEMENTS.map((item, i) => {
-          const c = colorMap[i % colorMap.length];
+          const b = banners[i % banners.length];
           return (
             <div
               key={item.id}
-              className={`fade-up delay-${i * 150} ${list.visible ? 'visible' : ''} group flex flex-col sm:flex-row sm:items-center gap-5 bg-white border ${c.border} rounded-2xl p-6 md:p-8 card-hover`}
+              className={`fade-up ${list.visible ? 'visible' : ''} relative overflow-hidden rounded-2xl ${b.bg} px-8 py-7 md:px-12 md:py-9 flex flex-col sm:flex-row sm:items-center gap-6 group card-hover`}
+              style={{ transitionDelay: `${i * 120}ms` }}
             >
+              {/* Background dekorasi bulat */}
+              <div className={`absolute -right-10 -top-10 w-48 h-48 rounded-full ${b.accent} pointer-events-none`} />
+              <div className={`absolute -right-4 -bottom-8 w-32 h-32 rounded-full ${b.accent} pointer-events-none`} />
+
+              {/* Nomor urut */}
+              <div className="absolute top-4 right-6 font-sora font-extrabold text-6xl md:text-8xl opacity-[0.06] select-none pointer-events-none">
+                {String(i + 1).padStart(2, '0')}
+              </div>
+
               {/* Icon */}
-              <div className={`shrink-0 w-14 h-14 rounded-2xl ${c.icon} flex items-center justify-center text-xl group-hover:scale-110 transition-transform duration-300`}>
-                {iconMap[item.icon] ?? <Star size={20} />}
+              <div className={`shrink-0 w-16 h-16 rounded-2xl ${b.icon} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                {iconMap[item.icon] ?? <Star size={28} />}
               </div>
 
               {/* Content */}
-              <div className="flex-1 min-w-0">
-                <div className="flex flex-wrap items-center gap-2 mb-1">
-                  <h3 className="font-sora text-lg md:text-xl font-bold text-[#1a1c1c]">
-                    {item.title}
-                  </h3>
-                  <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full ${c.badge}`}>
+              <div className="flex-1 relative z-10">
+                <div className="flex flex-wrap items-center gap-3 mb-2">
+                  <span className={`text-[10px] font-bold px-3 py-1 rounded-full ${b.badge} uppercase tracking-wider`}>
                     {item.year}
                   </span>
                 </div>
-                <p className="text-[#434656] text-sm md:text-base leading-relaxed">
+                <h3 className={`font-sora text-xl md:text-2xl font-extrabold ${b.text} leading-snug mb-2`}>
+                  {item.title}
+                </h3>
+                <p className={`text-sm md:text-base leading-relaxed ${b.sub} max-w-2xl`}>
                   {item.description}
                 </p>
               </div>
-
-              {/* Right accent line */}
-              <div className={`hidden sm:block w-1 self-stretch rounded-full ${c.icon.split(' ')[0]}`} />
             </div>
           );
         })}
