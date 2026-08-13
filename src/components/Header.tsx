@@ -12,12 +12,19 @@ export const Header: React.FC<HeaderProps> = ({ onConnectClick, activeSection })
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (!el) return;
+    const offset = 80;
+    const top = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
 
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
@@ -28,6 +35,96 @@ export const Header: React.FC<HeaderProps> = ({ onConnectClick, activeSection })
     { name: 'Achievements', href: '#achievements', id: 'achievements' },
     { name: 'Hobbies', href: '#hobbies', id: 'hobbies' },
   ];
+
+  return (
+    <header
+      id="main-header"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-[#f9f9f9]/90 backdrop-blur-md border-b border-[#e5e7eb] py-3 shadow-xs'
+          : 'bg-[#f9f9f9] py-5'
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 md:px-12 flex items-center justify-between">
+        <a
+          href="#home"
+          onClick={(e) => scrollToSection(e, 'home')}
+          className="font-sora font-extrabold text-xl tracking-tight text-[#1a1c1c] hover:text-[#0052ff] transition-colors"
+        >
+          {PERSONAL_INFO.brand}
+        </a>
+
+        <nav className="hidden md:flex items-center space-x-8">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <a
+                key={link.id}
+                href={link.href}
+                onClick={(e) => scrollToSection(e, link.id)}
+                className={`text-sm font-medium transition-all relative py-1 ${
+                  isActive ? 'text-[#0052ff] font-semibold' : 'text-[#434656] hover:text-[#1a1c1c]'
+                }`}
+              >
+                {link.name}
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#0052ff] rounded-full" />
+                )}
+              </a>
+            );
+          })}
+        </nav>
+
+        <div className="hidden md:flex items-center">
+          <button
+            onClick={onConnectClick}
+            className="bg-[#0052ff] hover:bg-[#003ec7] text-white font-medium text-sm px-6 py-2.5 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+          >
+            Connect
+          </button>
+        </div>
+
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 text-[#1a1c1c] hover:text-[#0052ff] rounded-lg"
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-white border-b border-[#e5e7eb] px-6 py-6 space-y-4 shadow-lg">
+          <nav className="flex flex-col space-y-3">
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.href}
+                onClick={(e) => { scrollToSection(e, link.id); setMobileMenuOpen(false); }}
+                className={`text-base font-medium py-2 px-3 rounded-lg transition-colors ${
+                  activeSection === link.id
+                    ? 'bg-[#f0f7ff] text-[#0052ff] font-semibold'
+                    : 'text-[#434656] hover:bg-gray-50'
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+          <div className="pt-2 border-t border-gray-100">
+            <button
+              onClick={() => { setMobileMenuOpen(false); onConnectClick(); }}
+              className="w-full bg-[#0052ff] hover:bg-[#003ec7] text-white font-medium text-base py-3 rounded-xl transition-all flex items-center justify-center gap-2"
+            >
+              Connect <ArrowUpRight size={18} />
+            </button>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
+
 
   return (
     <header 
